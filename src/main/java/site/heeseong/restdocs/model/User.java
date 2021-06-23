@@ -10,8 +10,6 @@ import java.time.LocalDateTime;
 @Table(name = "users")
 public class User {
 
-    public User() {}
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -20,5 +18,7 @@ public class User {
     private String phoneNumber;
     private LocalDateTime createAt;
     private LocalDateTime updateAt;
-    
+
+    public User() {}
+
 }
