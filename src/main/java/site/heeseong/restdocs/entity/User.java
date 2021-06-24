@@ -1,4 +1,4 @@
-package site.heeseong.restdocs.model;
+package site.heeseong.restdocs.entity;
 
 import lombok.Getter;
 
