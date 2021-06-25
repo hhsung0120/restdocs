@@ -9,20 +9,15 @@ spring:
     livereload:
       enabled: true
 
-  thymeleaf:
-    cache: false
-    enabled: true
-    encoding: UTF-8
-    suffix: .html
-
   jpa:
     database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
     open-in-view: false
+    hibernate:
+      ddl-auto: create
     properties:
       hibernate:
         show-sql: true
         format_sql: true
-        ddl-auto: none
 
 #DB configuration
 mybatis:

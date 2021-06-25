@@ -18,16 +18,20 @@ public class UserEntity extends TimeEntity {
     private String account;
     private String email;
     private String phoneNumber;
-    private LocalDateTime createAt;
-    private LocalDateTime updateAt;
 
     public UserEntity() {}
 
     @Builder
-    public UserEntity(Long id, String account, String email, String phoneNumber) {
-        this.id = id;
+    public UserEntity(String account, String email, String phoneNumber) {
         this.account = account;
         this.email = email;
         this.phoneNumber = phoneNumber;
+    }
+
+    public UserEntity update(String account, String email, String phoneNumber) {
+        this.account = account;
+        this.email = email;
+        this.phoneNumber = phoneNumber;
+        return this;
     }
 }
