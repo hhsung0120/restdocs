@@ -5,7 +5,6 @@ import lombok.Getter;
 import site.heeseong.restdocs.entity.common.TimeEntity;
 
 import javax.persistence.*;
-import java.time.LocalDateTime;
 
 @Getter
 @Entity

@@ -13,7 +13,8 @@ public class UserApiController {
 
     @PostMapping("")
     public String userSave(){
-        userService.saveUsers();
+        System.out.println("저장 입니다.");
+        //userService.saveUsers();
         return "200";
     }
 
@@ -22,4 +23,6 @@ public class UserApiController {
         userService.saveUsers();
         return "200";
     }
+
+
 }
