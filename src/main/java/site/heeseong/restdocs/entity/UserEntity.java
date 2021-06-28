@@ -27,10 +27,9 @@ public class UserEntity extends TimeEntity {
         this.phoneNumber = phoneNumber;
     }
 
-    public UserEntity update(String account, String email, String phoneNumber) {
+    public void update(String account, String email, String phoneNumber) {
         this.account = account;
         this.email = email;
         this.phoneNumber = phoneNumber;
-        return this;
     }
 }
