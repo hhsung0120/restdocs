@@ -18,6 +18,7 @@ import static org.springframework.restdocs.payload.PayloadDocumentation.*;
 import static org.springframework.restdocs.request.RequestDocumentation.parameterWithName;
 import static org.springframework.restdocs.request.RequestDocumentation.pathParameters;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
+import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 import static site.heeseong.restdocs.ApiDocumentUtils.getDocumentRequest;
 import static site.heeseong.restdocs.ApiDocumentUtils.getDocumentResponse;
@@ -60,7 +61,8 @@ public class UserApiController {
                                         , fieldWithPath("email").type(JsonFieldType.STRING).description("이메일")
                                         , fieldWithPath("phoneNumber").type(JsonFieldType.STRING).description("휴대폰 번호")
                                 )
-                        ));
+                        ))
+                .andDo(print());
     }
 
     @Test

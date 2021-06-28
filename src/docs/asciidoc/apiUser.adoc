@@ -1,0 +1,12 @@
+// === Index
+=== HOST
+include::{snippets}/select-user/curl-request.adoc[]
+
+=== Request Parameters:
+include::{snippets}/select-user/http-request.adoc[]
+
+=== Request HTTP Example:
+include::{snippets}/select-user/http-request.adoc[]
+
+=== Response
+include::{snippets}/select-user/http-response.adoc[]
