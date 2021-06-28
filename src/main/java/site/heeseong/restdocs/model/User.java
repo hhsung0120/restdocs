@@ -8,23 +8,23 @@ import site.heeseong.restdocs.entity.UserEntity;
 public class User {
 
     private Long idx;
-    private String account;
+    private String userId;
     private String email;
     private String phoneNumber;
 
     public User() {}
 
     @Builder
-    public User(Long idx, String account, String email, String phoneNumber) {
+    public User(Long idx, String userId, String email, String phoneNumber) {
         this.idx = idx;
-        this.account = account;
+        this.userId = userId;
         this.email = email;
         this.phoneNumber = phoneNumber;
     }
 
     public UserEntity toEntity(){
         return UserEntity.builder()
-                .account(account)
+                .userId(userId)
                 .email(email)
                 .phoneNumber(phoneNumber)
                 .build();

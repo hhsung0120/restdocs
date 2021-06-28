@@ -14,21 +14,21 @@ public class UserEntity extends TimeEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idx;
-    private String account;
+    private String userId;
     private String email;
     private String phoneNumber;
 
     public UserEntity() {}
 
     @Builder
-    public UserEntity(String account, String email, String phoneNumber) {
-        this.account = account;
+    public UserEntity(String userId, String email, String phoneNumber) {
+        this.userId = userId;
         this.email = email;
         this.phoneNumber = phoneNumber;
     }
 
-    public void update(String account, String email, String phoneNumber) {
-        this.account = account;
+    public void update(String userId, String email, String phoneNumber) {
+        this.userId = userId;
         this.email = email;
         this.phoneNumber = phoneNumber;
     }

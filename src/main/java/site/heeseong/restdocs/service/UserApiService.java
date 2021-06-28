@@ -16,7 +16,7 @@ public class UserApiService {
 
     public void saveUser() {
         User user = User.builder()
-                        .account("test1")
+                        .userId("test1")
                         .email("test@test.com")
                         .phoneNumber("010-1234-7777")
                         .build();
@@ -27,7 +27,7 @@ public class UserApiService {
     @Transactional
     public void updateUser(Long idx, User user) throws IllegalArgumentException{
         UserEntity userEntity = existUser(idx);
-        userEntity.update(user.getAccount(), user.getEmail(), user.getPhoneNumber());
+        userEntity.update(user.getUserId(), user.getEmail(), user.getPhoneNumber());
     }
 
     public void deleteUser(Long idx) throws IllegalArgumentException{
@@ -42,14 +42,14 @@ public class UserApiService {
         UserEntity userEntity = existUser(idx);
         return User.builder()
                     .idx(userEntity.getIdx())
-                    .account(userEntity.getAccount())
+                    .userId(userEntity.getUserId())
                     .phoneNumber(userEntity.getPhoneNumber())
                     .email(userEntity.getEmail())
                     .build();
     }
 
     public void saveTestUser() {
-        for(int i=0; i<10; i++){
+        for(int i=0; i<4; i++){
             this.saveUser();
         }
     }
