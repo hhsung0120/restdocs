@@ -2,28 +2,26 @@ package site.heeseong.restdocs.controller;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
-import site.heeseong.restdocs.service.UserService;
+import site.heeseong.restdocs.model.User;
+import site.heeseong.restdocs.service.UserApiService;
 
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/users")
 public class UserApiController {
 
-    private final UserService userService;
+    private final UserApiService userService;
 
     @GetMapping("/testData")
     public String insertTestData(){
-        for(int i=0; i<10; i++){
-            userService.saveUser();
-        }
+        userService.saveTestUser();
         return "200";
     }
 
-    @GetMapping("")
-    public String test(){
+    @GetMapping("/{idx}")
+    public User selectUser(@PathVariable Long idx){
         System.out.println("조회");
-        userService.selectUser(1L);
-        return "200";
+        return userService.selectUser(idx);
     }
 
     @PostMapping("")
@@ -33,17 +31,17 @@ public class UserApiController {
         return "200";
     }
 
-    @PutMapping("")
-    public String updateUser(){
+    @PutMapping("/{idx}")
+    public String updateUser(@PathVariable Long idx, @ModelAttribute User user){
         System.out.println("수정");
-        userService.updateUser();
+        userService.updateUser(idx, user);
         return "200";
     }
 
-    @DeleteMapping("")
-    public String deleteUser(){
+    @DeleteMapping("/{idx}")
+    public String deleteUser(@PathVariable Long idx){
         System.out.println("삭제");
-        userService.deleteUser();
+        userService.deleteUser(idx);
         return "200";
     }
 

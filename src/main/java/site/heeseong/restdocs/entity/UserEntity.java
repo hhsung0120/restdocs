@@ -13,7 +13,7 @@ public class UserEntity extends TimeEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long idx;
     private String account;
     private String email;
     private String phoneNumber;

@@ -7,7 +7,7 @@ import site.heeseong.restdocs.entity.UserEntity;
 @Getter
 public class User {
 
-    private Long id;
+    private Long idx;
     private String account;
     private String email;
     private String phoneNumber;
@@ -15,7 +15,8 @@ public class User {
     public User() {}
 
     @Builder
-    public User(String account, String email, String phoneNumber) {
+    public User(Long idx, String account, String email, String phoneNumber) {
+        this.idx = idx;
         this.account = account;
         this.email = email;
         this.phoneNumber = phoneNumber;
