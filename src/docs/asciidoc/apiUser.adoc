@@ -10,3 +10,10 @@ include::{snippets}/select-user/http-request.adoc[]
 
 === Response
 include::{snippets}/select-user/http-response.adoc[]
+
+=== Response Fields
+include::{snippets}/select-user/response-fields.adoc[]
+
+=== Path-Parameters
+include::{snippets}/select-user/path-parameters.adoc[]
+
