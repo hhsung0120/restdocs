@@ -10,19 +10,26 @@ version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '11'
 
 configurations {
+    asciidoctorExtensions
     compileOnly {
         extendsFrom annotationProcessor
     }
 }
 
+ext {
+    snippetsDir = file('build/generated-snippets')
+}
+
 asciidoctor {
+    inputs.dir snippetsDir
     dependsOn test
 }
 
 bootJar {
     dependsOn asciidoctor
-    from ("${asciidoctor.outputDir}/html5") {
-        into 'static/docs'
+    copy {
+        from "${asciidoctor.outputDir}"
+        into 'src/main/resources/static/docs'
     }
 }
 

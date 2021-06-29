@@ -26,7 +26,7 @@ import static site.heeseong.restdocs.ApiDocumentUtils.getDocumentResponse;
 
 @SpringBootTest
 @AutoConfigureMockMvc
-@AutoConfigureRestDocs(uriScheme = "https", uriHost = "docs.api.com") // (1)
+@AutoConfigureRestDocs(uriScheme = "https", uriHost = "docs.api.com")
 public class UserApiController {
 
     @Autowired

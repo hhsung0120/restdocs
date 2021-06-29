@@ -1,5 +1,5 @@
 // === Index
-=== HOST
+=== Host
 include::{snippets}/select-user/curl-request.adoc[]
 
 === Request Parameters:
